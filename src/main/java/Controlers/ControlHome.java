@@ -8,8 +8,13 @@ import javax.swing.JPanel;
 public class ControlHome {
     private final Home vista;
 
-    public ControlHome(Home vista) {
+    public ControlHome(Home vista, int nivelAcceso) {
         this.vista = vista;
+        
+        if (nivelAcceso == 1) {
+            vista.getLabel_Usuarios().setVisible(false);
+            vista.getPanel_Usuarios().setVisible(false); // si tienes un panel también
+        }
 
         vista.getLabel_Usuarios().addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
