@@ -42,7 +42,8 @@ public class ControlLogin {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 String usuario = login.getT_Usuario().getText();
                 String contrasena = new String(login.getTP_Contrasena().getPassword());
-
+                String lineaEncontrada = null;
+                
                 ArchivoUsuarios archivo = new ArchivoUsuarios();
                 boolean encontrado = false;
 
@@ -53,17 +54,22 @@ public class ControlLogin {
                     if (partes.length >= 3 &&
                         partes[1].trim().equalsIgnoreCase(usuario) &&
                         partes[2].trim().equals(contrasena)) {
+                        lineaEncontrada = linea;
                         encontrado = true;
                         break;
                     }
                 }
 
                 if (encontrado) {
+                    String[] partes = lineaEncontrada.split(";");
+                    int nivelAcceso = Integer.parseInt(partes[3].trim());
+                    
                     Home home = new Home();
+                    new ControlHome(home, nivelAcceso);
+
                     home.setVisible(true);
                     home.setLocationRelativeTo(null);
                     //home.setExtendedState(home.MAXIMIZED_BOTH);
-                    
                     
                     login.dispose();
                 } else {

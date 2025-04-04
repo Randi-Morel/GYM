@@ -8,11 +8,14 @@ public class Home extends javax.swing.JFrame {
 
     public Home() {
         initComponents();
-        new ControlHome(this);
     }
     
     public JLabel getLabel_Usuarios() {
         return label_Usuarios;
+    }
+    
+    public JPanel getPanel_Usuarios() {
+        return panel_Usuarios;
     }
 
     public JPanel getPanel_ControlPantallas() {
