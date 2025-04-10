@@ -1,2 +1,2 @@
-1;Admin;Admin123;0;Admin;admin12@gmail.com
-2;Cliente;123456;1;Cliente;
+admin;Admin123;0;Nombre;Apellido;admin12@gmail.com
+cliente;123456;1;Nombre;Apellido;

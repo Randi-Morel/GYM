@@ -1,0 +1,1 @@
+1;Prueba;Prueba 2;Prueba 2;01/04/2005;10/04/2025;123456;123456;Prueba 2;;15.00;15.00;Activo;Socio Activo

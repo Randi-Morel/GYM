@@ -3,8 +3,8 @@ package Models;
 import java.io.*;
 import java.util.*;
 
-public class ArchivoUsuarios {
-    private static final String RUTA_ARCHIVO = "src/main/java/Models/usuarios.txt";
+public class ArchivoEntrenadores {
+    private static final String RUTA_ARCHIVO = "src/main/java/Models/entrenadores.txt";
     
     // 1. Leer todo el archivo y retornarlo como una lista de strings
     public List<String> leerTodo() {
@@ -30,9 +30,9 @@ public class ArchivoUsuarios {
         }
     }
     
-    public void guardarOEditarPorID(String nuevaLinea, String usuarioBuscado) {
+    public void guardarOEditarPorID(String nuevaLinea, String idBuscado) {
         File archivoOriginal = new File(RUTA_ARCHIVO);
-        File archivoTemporal = new File("src/main/java/Models/temp_usuarios.txt");
+        File archivoTemporal = new File("src/main/java/Models/temp_entrenadores.txt");
 
         boolean actualizado = false;
 
@@ -41,17 +41,16 @@ public class ArchivoUsuarios {
 
             String linea;
             while ((linea = br.readLine()) != null) {
-                String[] partes = linea.split(";");
-                if (partes.length >= 1 && partes[0].trim().equals(String.valueOf(usuarioBuscado.trim()))) {
-                    bw.write(nuevaLinea); // reemplaza línea
+                String[] partes = linea.split(";", -1); // incluir campos vacíos
+                if (partes.length >= 1 && partes[0].trim().equals(idBuscado.trim())) {
+                    bw.write(nuevaLinea);
                     actualizado = true;
                 } else {
-                    bw.write(linea); // mantiene línea original
+                    bw.write(linea);
                 }
                 bw.newLine();
             }
 
-            // Si no existía, lo agregamos al final
             if (!actualizado) {
                 bw.write(nuevaLinea);
                 bw.newLine();
@@ -62,31 +61,31 @@ public class ArchivoUsuarios {
             return;
         }
 
-        // Reemplazar archivo
         if (archivoOriginal.delete()) {
             archivoTemporal.renameTo(archivoOriginal);
         }
     }
     
     // 3. Eliminar la línea que contenga el ID al inicio (ej: 2)
-    public void eliminarPorUsuario(String usuarioEliminar) {
+    public void eliminarPorIDEntrenador(String idEntrenadorEliminar) {
         File archivoOriginal = new File(RUTA_ARCHIVO);
-        File archivoTemporal = new File("src/main/java/Models/temp_usuarios.txt");
+        File archivoTemporal = new File("src/main/java/Models/temp_entrenadores.txt");
 
         try (BufferedReader br = new BufferedReader(new FileReader(archivoOriginal));
              BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal))) {
 
             String linea;
             while ((linea = br.readLine()) != null) {
-                String[] partes = linea.split(";");
-                if (!partes[0].trim().equalsIgnoreCase(usuarioEliminar)) {
+                String[] partes = linea.split(";", -1);
+
+                if (!partes[0].trim().equals(idEntrenadorEliminar.trim())) {
                     bw.write(linea);
                     bw.newLine();
                 }
             }
 
         } catch (IOException e) {
-            System.out.println("Error al eliminar usuario: " + e.getMessage());
+            System.out.println("Error al eliminar entrenador: " + e.getMessage());
             return;
         }
 
@@ -96,18 +95,18 @@ public class ArchivoUsuarios {
         }
     }
     
-    public String buscarPorUsuario(String usuarioBuscado) {
+    public String buscarPorIDEntrenador(String idBuscado) {
         try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(";", -1);
 
-                if (partes.length >= 5 && partes[0].trim().equalsIgnoreCase(usuarioBuscado.trim())) {
+                if (partes.length >= 3 && partes[0].trim().equals(idBuscado.trim())) {
                     return linea;
                 }
             }
         } catch (IOException e) {
-            System.out.println("❌ Error al buscar usuario: " + e.getMessage());
+            System.out.println("❌ Error al buscar entrenador: " + e.getMessage());
         }
         return null;
     }

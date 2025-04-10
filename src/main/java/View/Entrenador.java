@@ -3,22 +3,18 @@ package View;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Usuario extends javax.swing.JPanel {
+public class Entrenador extends javax.swing.JPanel {
 
-    public Usuario() {
+    public Entrenador() {
         initComponents();
     }
     
-    public javax.swing.JTextField getT_Usuario() { return T_Usuario; }
+    public javax.swing.JTextField getTID_Entrenador() { return TID_Entrenador; }
     public javax.swing.JTextField getT_Nombre() { return T_Nombre; }
     public javax.swing.JTextField getT_Apellidos() { return T_Apellidos; }
-    public javax.swing.JPasswordField getT_Contrasena() { return T_Contrasena; }
     public javax.swing.JTextField getT_Correo() { return T_Correo; }
-    
-    public javax.swing.JComboBox<String> getC_NivelAcceso() {
-        return C_NivelAcceso;
-    }
-    
+    public javax.swing.JTextField getT_Telefono() { return T_Telefono; }
+
     public JLabel getLabel_Estado() {
         return label_Estado;
     }
@@ -53,17 +49,15 @@ public class Usuario extends javax.swing.JPanel {
 
         bg = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        T_Usuario = new javax.swing.JTextField();
+        TID_Entrenador = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         T_Nombre = new javax.swing.JTextField();
         T_Apellidos = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        T_Contrasena = new javax.swing.JPasswordField();
         T_Correo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         panel_Eliminar = new javax.swing.JPanel();
         label_Eliminar = new javax.swing.JLabel();
         panel_Salir = new javax.swing.JPanel();
@@ -75,21 +69,22 @@ public class Usuario extends javax.swing.JPanel {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
-        C_NivelAcceso = new javax.swing.JComboBox<>();
         label_Estado = new javax.swing.JLabel();
+        T_Telefono = new javax.swing.JTextField();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel1.setText("Mantenimiento de Usuarios:");
+        jLabel1.setText("Mantenimiento de Entrenadores:");
+        jLabel1.setToolTipText("");
         bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
-        T_Usuario.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        bg.add(T_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 230, 30));
+        TID_Entrenador.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        bg.add(TID_Entrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 230, 30));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel2.setText("*Usuario:");
+        jLabel2.setText("*ID_Entrenador:");
         bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -107,11 +102,8 @@ public class Usuario extends javax.swing.JPanel {
         bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel7.setText("*Contraseña:");
+        jLabel7.setText("Telefono:");
         bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
-
-        T_Contrasena.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        bg.add(T_Contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 230, 30));
 
         T_Correo.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         bg.add(T_Correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 230, 30));
@@ -119,10 +111,6 @@ public class Usuario extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel5.setText("Correo:");
         bg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel6.setText("*Nivel de acceso:");
-        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, -1, -1));
 
         panel_Eliminar.setBackground(new java.awt.Color(66, 65, 69));
         panel_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -211,14 +199,12 @@ public class Usuario extends javax.swing.JPanel {
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 230, 10));
 
-        C_NivelAcceso.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        C_NivelAcceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Usuario" }));
-        C_NivelAcceso.setToolTipText("");
-        bg.add(C_NivelAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 230, 30));
-
         label_Estado.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         label_Estado.setText("Creando");
         bg.add(label_Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, -1, -1));
+
+        T_Telefono.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        bg.add(T_Telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 230, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -234,19 +220,17 @@ public class Usuario extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> C_NivelAcceso;
+    private javax.swing.JTextField TID_Entrenador;
     private javax.swing.JTextField T_Apellidos;
-    private javax.swing.JPasswordField T_Contrasena;
     private javax.swing.JTextField T_Correo;
     private javax.swing.JTextField T_Nombre;
-    private javax.swing.JTextField T_Usuario;
+    private javax.swing.JTextField T_Telefono;
     private javax.swing.JPanel bg;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

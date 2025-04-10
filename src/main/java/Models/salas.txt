@@ -1,0 +1,2 @@
+1;Sala Principal;Sala Principal;1;
+2;Sala Secundaria;Sala Secundaria;1;
