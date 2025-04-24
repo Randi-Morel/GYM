@@ -6,17 +6,20 @@ import java.util.*;
 public class ArchivoEntrenadores {
     private static final String RUTA_ARCHIVO = "src/main/java/Models/entrenadores.txt";
     
-    // 1. Leer todo el archivo y retornarlo como una lista de strings
     public List<String> leerTodo() {
         List<String> lineas = new ArrayList<>();
+
         try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO))) {
             String linea;
             while ((linea = br.readLine()) != null) {
-                lineas.add(linea);
+                if (!linea.trim().isEmpty()) {
+                    lineas.add(linea.trim());
+                }
             }
         } catch (IOException e) {
-            System.out.println("Error al leer el archivo: " + e.getMessage());
+            System.out.println("❌ Error al leer archivo de entrenadores: " + e.getMessage());
         }
+
         return lineas;
     }
     

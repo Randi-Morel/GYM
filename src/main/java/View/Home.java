@@ -32,6 +32,14 @@ public class Home extends javax.swing.JFrame {
     public JPanel getPanel_Consultas() {
         return panel_Consultas;
     }
+    
+     public JLabel getLabel_Movimientos() {
+        return label_Movimientos;
+    }
+    
+    public JPanel getPanel_Movimientos() {
+        return panel_Movimientos;
+    }
 
     public JPanel getPanel_ControlPantallas() {
         return panel_ControlPantallas;

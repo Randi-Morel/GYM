@@ -1,2 +1,22 @@
 1;Primera actividad;Primera actividad;1;1
 2;Segunda actividad;Segunda actividad;1;1
+3;Yoga Matutino;Sesión de yoga para principiantes;2;3
+4;Entrenamiento Funcional;Rutina intensa con circuitos;2;4
+5;Boxeo Recreativo;Clases de boxeo para adultos;3;5
+6;Pilates Intermedio;Fortalecimiento y estiramientos;3;6
+7;Baile Fit;Clase divertida con ritmos latinos;4;7
+8;Zumba Avanzado;Cardio con pasos de baile exigentes;4;8
+9;Spinning Express;Sesión corta pero intensa;5;9
+10;TRX Básico;Entrenamiento con suspensión;5;10
+11;Stretch & Flex;Rutina de estiramientos activos;6;11
+12;Yoga Avanzado;Posturas de alto nivel y control;6;12
+13;Cross Training;Sesión de fuerza y resistencia combinadas;7;3
+14;HIIT Power;Entrenamiento en intervalos intensos;7;4
+15;Cardio Dance;Bailes dinámicos para quemar grasa;8;5
+16;Mindfulness;Técnicas de respiración y relajación;8;6
+17;Entrenamiento Deportivo;Preparación física general;9;7
+18;Step Aeróbico;Ejercicio con plataformas;9;8
+19;Acondicionamiento Físico;Ejercicios progresivos;10;9
+20;Boxeo Avanzado;Técnicas para nivel competitivo;10;10
+21;Tai Chi Inicial;Movimientos suaves y controlados;11;11
+22;Funcional Outdoor;Entrenamiento funcional al aire libre;11;12

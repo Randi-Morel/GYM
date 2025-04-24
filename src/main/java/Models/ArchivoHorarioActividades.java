@@ -1,9 +1,28 @@
 package Models;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArchivoHorarioActividades {
     private static final String RUTA_ARCHIVO = "src/main/java/Models/horarioActividades.txt";
+    
+    public List<String> leerTodo() {
+        List<String> lineas = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVO))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (!linea.trim().isEmpty()) {
+                    lineas.add(linea.trim());
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("❌ Error al leer archivo de actividades: " + e.getMessage());
+        }
+
+        return lineas;
+    }
     
     public void guardarOEditarPorID(String nuevaLinea, String idBuscado) {
         File archivoOriginal = new File(RUTA_ARCHIVO);

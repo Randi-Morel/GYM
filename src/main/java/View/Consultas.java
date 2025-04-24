@@ -16,6 +16,54 @@ public class Consultas extends javax.swing.JPanel {
     public JPanel getPanel_CerrarMenu() {
         return panel_CerrarMenu;
     }
+    
+    public JLabel getLabel_Usuarios() {
+        return label_Usuarios;
+    }
+    
+    public JPanel getPanel_Usuarios() {
+        return panel_Usuarios;
+    }
+    
+    public JLabel getLabel_Entrenador() {
+        return label_Entrenador;
+    }
+    
+    public JPanel getPanel_Entrenador() {
+        return panel_Entrenador;
+    }
+    
+    public JLabel getLabel_Localizaciones() {
+        return label_Localizaciones;
+    }
+    
+    public JPanel getPanel_Localizaciones() {
+        return panel_Localizaciones;
+    }
+    
+    public JLabel getLabel_Salas() {
+        return label_Salas;
+    }
+    
+    public JPanel getPanel_Salas() {
+        return panel_Salas;
+    }
+    
+    public JLabel getLabel_Actividades() {
+        return label_Actividades;
+    }
+    
+    public JPanel getPanel_Actividades() {
+        return panel_Actividades;
+    }
+    
+    public JLabel getLabel_Horarios() {
+        return label_Horarios;
+    }
+    
+    public JPanel getPanel_Horarios() {
+        return panel_Horarios;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -24,16 +72,16 @@ public class Consultas extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         panel_Usuarios = new javax.swing.JPanel();
         label_Usuarios = new javax.swing.JLabel();
-        panel_Usuarios1 = new javax.swing.JPanel();
-        label_Usuarios1 = new javax.swing.JLabel();
-        panel_Usuarios2 = new javax.swing.JPanel();
-        label_Usuarios2 = new javax.swing.JLabel();
-        panel_Usuarios3 = new javax.swing.JPanel();
-        label_Usuarios3 = new javax.swing.JLabel();
-        panel_Usuarios4 = new javax.swing.JPanel();
-        label_Usuarios4 = new javax.swing.JLabel();
-        panel_Usuarios5 = new javax.swing.JPanel();
-        label_Usuarios5 = new javax.swing.JLabel();
+        panel_Entrenador = new javax.swing.JPanel();
+        label_Entrenador = new javax.swing.JLabel();
+        panel_Localizaciones = new javax.swing.JPanel();
+        label_Localizaciones = new javax.swing.JLabel();
+        panel_Salas = new javax.swing.JPanel();
+        label_Salas = new javax.swing.JLabel();
+        panel_Actividades = new javax.swing.JPanel();
+        label_Actividades = new javax.swing.JLabel();
+        panel_Horarios = new javax.swing.JPanel();
+        label_Horarios = new javax.swing.JLabel();
         panel_Usuarios8 = new javax.swing.JPanel();
         label_Usuarios8 = new javax.swing.JLabel();
         panel_Usuarios6 = new javax.swing.JPanel();
@@ -77,125 +125,125 @@ public class Consultas extends javax.swing.JPanel {
 
         bg.add(panel_Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 200, 50));
 
-        panel_Usuarios1.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_Entrenador.setBackground(new java.awt.Color(66, 65, 69));
+        panel_Entrenador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        label_Usuarios1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios1.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios1.setText("Entrenador");
-        label_Usuarios1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_Entrenador.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        label_Entrenador.setForeground(new java.awt.Color(255, 255, 255));
+        label_Entrenador.setText("Entrenadores");
+        label_Entrenador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout panel_Usuarios1Layout = new javax.swing.GroupLayout(panel_Usuarios1);
-        panel_Usuarios1.setLayout(panel_Usuarios1Layout);
-        panel_Usuarios1Layout.setHorizontalGroup(
-            panel_Usuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Usuarios1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(label_Usuarios1)
-                .addContainerGap(53, Short.MAX_VALUE))
+        javax.swing.GroupLayout panel_EntrenadorLayout = new javax.swing.GroupLayout(panel_Entrenador);
+        panel_Entrenador.setLayout(panel_EntrenadorLayout);
+        panel_EntrenadorLayout.setHorizontalGroup(
+            panel_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_EntrenadorLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(label_Entrenador)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
-        panel_Usuarios1Layout.setVerticalGroup(
-            panel_Usuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        bg.add(panel_Usuarios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 200, -1));
-
-        panel_Usuarios2.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        label_Usuarios2.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios2.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios2.setText("Localización");
-        label_Usuarios2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout panel_Usuarios2Layout = new javax.swing.GroupLayout(panel_Usuarios2);
-        panel_Usuarios2.setLayout(panel_Usuarios2Layout);
-        panel_Usuarios2Layout.setHorizontalGroup(
-            panel_Usuarios2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Usuarios2Layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
-                .addComponent(label_Usuarios2)
-                .addGap(43, 43, 43))
-        );
-        panel_Usuarios2Layout.setVerticalGroup(
-            panel_Usuarios2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        panel_EntrenadorLayout.setVerticalGroup(
+            panel_EntrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_Entrenador, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        bg.add(panel_Usuarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 200, -1));
+        bg.add(panel_Entrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 200, -1));
 
-        panel_Usuarios3.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_Localizaciones.setBackground(new java.awt.Color(66, 65, 69));
+        panel_Localizaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        label_Usuarios3.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios3.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios3.setText("Salas");
-        label_Usuarios3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_Localizaciones.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        label_Localizaciones.setForeground(new java.awt.Color(255, 255, 255));
+        label_Localizaciones.setText("Localizaciones");
+        label_Localizaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout panel_Usuarios3Layout = new javax.swing.GroupLayout(panel_Usuarios3);
-        panel_Usuarios3.setLayout(panel_Usuarios3Layout);
-        panel_Usuarios3Layout.setHorizontalGroup(
-            panel_Usuarios3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Usuarios3Layout.createSequentialGroup()
+        javax.swing.GroupLayout panel_LocalizacionesLayout = new javax.swing.GroupLayout(panel_Localizaciones);
+        panel_Localizaciones.setLayout(panel_LocalizacionesLayout);
+        panel_LocalizacionesLayout.setHorizontalGroup(
+            panel_LocalizacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_LocalizacionesLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(label_Localizaciones)
+                .addGap(30, 30, 30))
+        );
+        panel_LocalizacionesLayout.setVerticalGroup(
+            panel_LocalizacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_Localizaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        bg.add(panel_Localizaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 200, -1));
+
+        panel_Salas.setBackground(new java.awt.Color(66, 65, 69));
+        panel_Salas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        label_Salas.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        label_Salas.setForeground(new java.awt.Color(255, 255, 255));
+        label_Salas.setText("Salas");
+        label_Salas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout panel_SalasLayout = new javax.swing.GroupLayout(panel_Salas);
+        panel_Salas.setLayout(panel_SalasLayout);
+        panel_SalasLayout.setHorizontalGroup(
+            panel_SalasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_SalasLayout.createSequentialGroup()
                 .addGap(73, 73, 73)
-                .addComponent(label_Usuarios3)
+                .addComponent(label_Salas)
                 .addContainerGap(78, Short.MAX_VALUE))
         );
-        panel_Usuarios3Layout.setVerticalGroup(
-            panel_Usuarios3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        panel_SalasLayout.setVerticalGroup(
+            panel_SalasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_Salas, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        bg.add(panel_Usuarios3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 200, -1));
+        bg.add(panel_Salas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 200, -1));
 
-        panel_Usuarios4.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_Actividades.setBackground(new java.awt.Color(66, 65, 69));
+        panel_Actividades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        label_Usuarios4.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios4.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios4.setText("Actividades");
-        label_Usuarios4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_Actividades.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        label_Actividades.setForeground(new java.awt.Color(255, 255, 255));
+        label_Actividades.setText("Actividades");
+        label_Actividades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout panel_Usuarios4Layout = new javax.swing.GroupLayout(panel_Usuarios4);
-        panel_Usuarios4.setLayout(panel_Usuarios4Layout);
-        panel_Usuarios4Layout.setHorizontalGroup(
-            panel_Usuarios4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Usuarios4Layout.createSequentialGroup()
+        javax.swing.GroupLayout panel_ActividadesLayout = new javax.swing.GroupLayout(panel_Actividades);
+        panel_Actividades.setLayout(panel_ActividadesLayout);
+        panel_ActividadesLayout.setHorizontalGroup(
+            panel_ActividadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ActividadesLayout.createSequentialGroup()
                 .addContainerGap(53, Short.MAX_VALUE)
-                .addComponent(label_Usuarios4)
+                .addComponent(label_Actividades)
                 .addGap(43, 43, 43))
         );
-        panel_Usuarios4Layout.setVerticalGroup(
-            panel_Usuarios4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        panel_ActividadesLayout.setVerticalGroup(
+            panel_ActividadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_Actividades, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        bg.add(panel_Usuarios4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 200, -1));
+        bg.add(panel_Actividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 200, -1));
 
-        panel_Usuarios5.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_Horarios.setBackground(new java.awt.Color(66, 65, 69));
+        panel_Horarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        label_Usuarios5.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios5.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios5.setText("Horarios Actividades");
-        label_Usuarios5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_Horarios.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        label_Horarios.setForeground(new java.awt.Color(255, 255, 255));
+        label_Horarios.setText("Horarios Actividades");
+        label_Horarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout panel_Usuarios5Layout = new javax.swing.GroupLayout(panel_Usuarios5);
-        panel_Usuarios5.setLayout(panel_Usuarios5Layout);
-        panel_Usuarios5Layout.setHorizontalGroup(
-            panel_Usuarios5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Usuarios5Layout.createSequentialGroup()
+        javax.swing.GroupLayout panel_HorariosLayout = new javax.swing.GroupLayout(panel_Horarios);
+        panel_Horarios.setLayout(panel_HorariosLayout);
+        panel_HorariosLayout.setHorizontalGroup(
+            panel_HorariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_HorariosLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(label_Usuarios5)
+                .addComponent(label_Horarios)
                 .addContainerGap())
         );
-        panel_Usuarios5Layout.setVerticalGroup(
-            panel_Usuarios5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        panel_HorariosLayout.setVerticalGroup(
+            panel_HorariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_Horarios, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        bg.add(panel_Usuarios5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 200, -1));
+        bg.add(panel_Horarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 200, -1));
 
         panel_Usuarios8.setBackground(new java.awt.Color(66, 65, 69));
         panel_Usuarios8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -388,28 +436,28 @@ public class Consultas extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel label_Actividades;
     private javax.swing.JLabel label_CerrarMenu;
+    private javax.swing.JLabel label_Entrenador;
+    private javax.swing.JLabel label_Horarios;
+    private javax.swing.JLabel label_Localizaciones;
+    private javax.swing.JLabel label_Salas;
     private javax.swing.JLabel label_Usuarios;
-    private javax.swing.JLabel label_Usuarios1;
     private javax.swing.JLabel label_Usuarios11;
     private javax.swing.JLabel label_Usuarios12;
-    private javax.swing.JLabel label_Usuarios2;
-    private javax.swing.JLabel label_Usuarios3;
-    private javax.swing.JLabel label_Usuarios4;
-    private javax.swing.JLabel label_Usuarios5;
     private javax.swing.JLabel label_Usuarios6;
     private javax.swing.JLabel label_Usuarios7;
     private javax.swing.JLabel label_Usuarios8;
     private javax.swing.JLabel label_Usuarios9;
+    private javax.swing.JPanel panel_Actividades;
     private javax.swing.JPanel panel_CerrarMenu;
+    private javax.swing.JPanel panel_Entrenador;
+    private javax.swing.JPanel panel_Horarios;
+    private javax.swing.JPanel panel_Localizaciones;
+    private javax.swing.JPanel panel_Salas;
     private javax.swing.JPanel panel_Usuarios;
-    private javax.swing.JPanel panel_Usuarios1;
     private javax.swing.JPanel panel_Usuarios11;
     private javax.swing.JPanel panel_Usuarios12;
-    private javax.swing.JPanel panel_Usuarios2;
-    private javax.swing.JPanel panel_Usuarios3;
-    private javax.swing.JPanel panel_Usuarios4;
-    private javax.swing.JPanel panel_Usuarios5;
     private javax.swing.JPanel panel_Usuarios6;
     private javax.swing.JPanel panel_Usuarios7;
     private javax.swing.JPanel panel_Usuarios8;

@@ -10,7 +10,7 @@ public class HoraActividades extends javax.swing.JPanel {
     }
     
     public javax.swing.JTextField getTID_Horario() { return TID_Horario; }
-    public javax.swing.JTextField getT_Dia() { return T_Dia; }
+    public javax.swing.JComboBox<String> getCID_Dia() { return CID_Dia; }
     public javax.swing.JTextField getT_Hora() { return T_Hora; }
     public javax.swing.JComboBox<String> getCID_Localizacion() { return CID_Localizacion; }
 
@@ -51,7 +51,6 @@ public class HoraActividades extends javax.swing.JPanel {
         TID_Horario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        T_Dia = new javax.swing.JTextField();
         T_Hora = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -67,6 +66,7 @@ public class HoraActividades extends javax.swing.JPanel {
         jSeparator5 = new javax.swing.JSeparator();
         label_Estado = new javax.swing.JLabel();
         CID_Localizacion = new javax.swing.JComboBox<>();
+        CID_Dia = new javax.swing.JComboBox<>();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,9 +88,6 @@ public class HoraActividades extends javax.swing.JPanel {
         jLabel3.setText("*Día:");
         jLabel3.setToolTipText("");
         bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, -1, -1));
-
-        T_Dia.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        bg.add(T_Dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 230, 30));
 
         T_Hora.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         bg.add(T_Hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 230, 30));
@@ -194,6 +191,9 @@ public class HoraActividades extends javax.swing.JPanel {
         CID_Localizacion.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         bg.add(CID_Localizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 230, 30));
 
+        CID_Dia.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        bg.add(CID_Dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 230, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -208,9 +208,9 @@ public class HoraActividades extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CID_Dia;
     private javax.swing.JComboBox<String> CID_Localizacion;
     private javax.swing.JTextField TID_Horario;
-    private javax.swing.JTextField T_Dia;
     private javax.swing.JTextField T_Hora;
     private javax.swing.JPanel bg;
     private javax.swing.JLabel jLabel1;

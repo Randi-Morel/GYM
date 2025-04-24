@@ -8,6 +8,8 @@ import View.Home;
 import View.HoraActividades;
 import View.Localizacion;
 import View.Mantenimientos;
+import View.Reserva;
+import View.ReservaActividades;
 import View.Salas;
 import View.Usuario;
 import java.awt.BorderLayout;
@@ -181,6 +183,42 @@ public class ControlMantenimientos {
                 Cliente panelCliente = new Cliente();
                 new ControlCliente(panelCliente, vistaPrincipal, controladorHome);
                 cargarPantalla(panelCliente);
+            }
+        });
+        
+        vista.getLabel_Reservas().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Reserva panelReserva = new Reserva();
+                new ControlReservas(panelReserva, vistaPrincipal, controladorHome);
+                cargarPantalla(panelReserva);
+            }
+        });
+
+        vista.getPanel_Reservas().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Reserva panelReserva = new Reserva();
+                new ControlReservas(panelReserva, vistaPrincipal, controladorHome);
+                cargarPantalla(panelReserva);
+            }
+        });
+        
+        vista.getLabel_ReservaActividades().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ReservaActividades panelReservaActividades = new ReservaActividades();
+                new ControlReservaActividades(panelReservaActividades, vistaPrincipal, controladorHome);
+                cargarPantalla(panelReservaActividades);
+            }
+        });
+
+        vista.getPanel_ReservaActividades().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ReservaActividades panelReservaActividades = new ReservaActividades();
+                new ControlReservaActividades(panelReservaActividades, vistaPrincipal, controladorHome);
+                cargarPantalla(panelReservaActividades);
             }
         });
     }

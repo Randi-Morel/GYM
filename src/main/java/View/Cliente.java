@@ -17,8 +17,8 @@ public class Cliente extends javax.swing.JPanel {
     public javax.swing.JTextField getT_Correo() { return T_Correo; }
     public javax.swing.JTextField getT_Telefono() { return T_Telefono; }
     public javax.swing.JTextField getT_Celular() { return T_Celular; }
-    public javax.swing.JTextField getT_FechaIngreso() { return T_FechaIngreso; }
-    public javax.swing.JTextField getT_FechaNacimiento() { return T_FechaNacimiento; }
+    public com.toedter.calendar.JDateChooser getD_FechaIngreso() { return D_FechaIngreso; }
+    public com.toedter.calendar.JDateChooser getD_FechaNacimiento() { return D_FechaNacimiento; }
     public javax.swing.JTextField getT_Balance() { return T_Balance; }
     public javax.swing.JTextField getT_ValorCuota() { return T_ValorCuota; }
     public javax.swing.JComboBox<String> getCID_EstadoCliente() { return CID_EstadoCliente; }
@@ -90,10 +90,8 @@ public class Cliente extends javax.swing.JPanel {
         T_Direccion = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
-        T_FechaNacimiento = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        T_FechaIngreso = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
@@ -107,6 +105,8 @@ public class Cliente extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         T_ValorCuota = new javax.swing.JTextField();
         jSeparator14 = new javax.swing.JSeparator();
+        D_FechaIngreso = new com.toedter.calendar.JDateChooser();
+        D_FechaNacimiento = new com.toedter.calendar.JDateChooser();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -276,18 +276,12 @@ public class Cliente extends javax.swing.JPanel {
         jLabel10.setText("*Fecha de Nacimiento:");
         bg.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, -1, -1));
 
-        T_FechaNacimiento.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        bg.add(T_FechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 230, 30));
-
         jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, 230, 10));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel11.setText("*Fecha de Ingreso:");
         bg.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, -1, -1));
-
-        T_FechaIngreso.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        bg.add(T_FechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 230, 30));
 
         jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 230, 10));
@@ -310,6 +304,7 @@ public class Cliente extends javax.swing.JPanel {
         jLabel14.setText("Balance de cliente:");
         bg.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
+        T_Balance.setEditable(false);
         T_Balance.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         bg.add(T_Balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 230, 30));
 
@@ -334,6 +329,13 @@ public class Cliente extends javax.swing.JPanel {
         jSeparator14.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, 230, 10));
 
+        D_FechaIngreso.setFocusable(false);
+        D_FechaIngreso.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        bg.add(D_FechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 230, 30));
+
+        D_FechaNacimiento.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        bg.add(D_FechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 230, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -350,6 +352,8 @@ public class Cliente extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CID_EstadoCliente;
     private javax.swing.JComboBox<String> CID_TipoCliente;
+    private com.toedter.calendar.JDateChooser D_FechaIngreso;
+    private com.toedter.calendar.JDateChooser D_FechaNacimiento;
     private javax.swing.JTextField TID_Cliente;
     private javax.swing.JTextField T_Apellido1;
     private javax.swing.JTextField T_Apellido2;
@@ -357,8 +361,6 @@ public class Cliente extends javax.swing.JPanel {
     private javax.swing.JTextField T_Celular;
     private javax.swing.JTextField T_Correo;
     private javax.swing.JTextField T_Direccion;
-    private javax.swing.JTextField T_FechaIngreso;
-    private javax.swing.JTextField T_FechaNacimiento;
     private javax.swing.JTextField T_Nombre;
     private javax.swing.JTextField T_Telefono;
     private javax.swing.JTextField T_ValorCuota;

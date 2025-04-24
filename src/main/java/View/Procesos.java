@@ -16,18 +16,32 @@ public class Procesos extends javax.swing.JPanel {
     public JPanel getPanel_CerrarMenu() {
         return panel_CerrarMenu;
     }
+    
+    public JLabel getLabel_GenerarCobro() {
+        return label_GenerarCobro;
+    }
+    
+    public JPanel getPanel_GenerarCobro() {
+        return panel_GenerarCobro;
+    }
+    
+    public JLabel getLabel_ActualizarCuota() {
+        return label_ActualizarCuota;
+    }
+    
+    public JPanel getPanel_ActualizarCuota() {
+        return panel_ActualizarCuota;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        panel_Usuarios5 = new javax.swing.JPanel();
-        label_Usuarios5 = new javax.swing.JLabel();
-        panel_Usuarios6 = new javax.swing.JPanel();
-        label_Usuarios6 = new javax.swing.JLabel();
-        panel_Usuarios7 = new javax.swing.JPanel();
-        label_Usuarios7 = new javax.swing.JLabel();
+        panel_GenerarCobro = new javax.swing.JPanel();
+        label_GenerarCobro = new javax.swing.JLabel();
+        panel_ActualizarCuota = new javax.swing.JPanel();
+        label_ActualizarCuota = new javax.swing.JLabel();
         panel_CerrarMenu = new javax.swing.JPanel();
         label_CerrarMenu = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -35,77 +49,53 @@ public class Procesos extends javax.swing.JPanel {
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_Usuarios5.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_GenerarCobro.setBackground(new java.awt.Color(66, 65, 69));
+        panel_GenerarCobro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        label_Usuarios5.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios5.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios5.setText("Generar Cobro");
-        label_Usuarios5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_GenerarCobro.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        label_GenerarCobro.setForeground(new java.awt.Color(255, 255, 255));
+        label_GenerarCobro.setText("Generar Cobro");
+        label_GenerarCobro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout panel_Usuarios5Layout = new javax.swing.GroupLayout(panel_Usuarios5);
-        panel_Usuarios5.setLayout(panel_Usuarios5Layout);
-        panel_Usuarios5Layout.setHorizontalGroup(
-            panel_Usuarios5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Usuarios5Layout.createSequentialGroup()
+        javax.swing.GroupLayout panel_GenerarCobroLayout = new javax.swing.GroupLayout(panel_GenerarCobro);
+        panel_GenerarCobro.setLayout(panel_GenerarCobroLayout);
+        panel_GenerarCobroLayout.setHorizontalGroup(
+            panel_GenerarCobroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_GenerarCobroLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(label_Usuarios5)
+                .addComponent(label_GenerarCobro)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
-        panel_Usuarios5Layout.setVerticalGroup(
-            panel_Usuarios5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        panel_GenerarCobroLayout.setVerticalGroup(
+            panel_GenerarCobroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_GenerarCobro, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        bg.add(panel_Usuarios5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 200, -1));
+        bg.add(panel_GenerarCobro, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 200, -1));
 
-        panel_Usuarios6.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_ActualizarCuota.setBackground(new java.awt.Color(66, 65, 69));
+        panel_ActualizarCuota.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        label_Usuarios6.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios6.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios6.setText("Reservar Cobro");
-        label_Usuarios6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_ActualizarCuota.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        label_ActualizarCuota.setForeground(new java.awt.Color(255, 255, 255));
+        label_ActualizarCuota.setText("Actualizar Cuotas");
+        label_ActualizarCuota.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout panel_Usuarios6Layout = new javax.swing.GroupLayout(panel_Usuarios6);
-        panel_Usuarios6.setLayout(panel_Usuarios6Layout);
-        panel_Usuarios6Layout.setHorizontalGroup(
-            panel_Usuarios6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Usuarios6Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(label_Usuarios6)
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        panel_Usuarios6Layout.setVerticalGroup(
-            panel_Usuarios6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios6, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        bg.add(panel_Usuarios6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 200, -1));
-
-        panel_Usuarios7.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        label_Usuarios7.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios7.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios7.setText("Actualizar Cuotas");
-        label_Usuarios7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout panel_Usuarios7Layout = new javax.swing.GroupLayout(panel_Usuarios7);
-        panel_Usuarios7.setLayout(panel_Usuarios7Layout);
-        panel_Usuarios7Layout.setHorizontalGroup(
-            panel_Usuarios7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_Usuarios7Layout.createSequentialGroup()
+        javax.swing.GroupLayout panel_ActualizarCuotaLayout = new javax.swing.GroupLayout(panel_ActualizarCuota);
+        panel_ActualizarCuota.setLayout(panel_ActualizarCuotaLayout);
+        panel_ActualizarCuotaLayout.setHorizontalGroup(
+            panel_ActualizarCuotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_ActualizarCuotaLayout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(label_Usuarios7)
+                .addComponent(label_ActualizarCuota)
                 .addGap(18, 18, 18))
         );
-        panel_Usuarios7Layout.setVerticalGroup(
-            panel_Usuarios7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        panel_ActualizarCuotaLayout.setVerticalGroup(
+            panel_ActualizarCuotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_ActualizarCuota, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        bg.add(panel_Usuarios7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 200, -1));
+        bg.add(panel_ActualizarCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 200, -1));
 
         panel_CerrarMenu.setBackground(new java.awt.Color(66, 65, 69));
         panel_CerrarMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -132,8 +122,8 @@ public class Procesos extends javax.swing.JPanel {
         bg.add(panel_CerrarMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 560, 160, -1));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel1.setText("Mantenimientos:");
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+        jLabel1.setText("Procesos:");
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -151,13 +141,11 @@ public class Procesos extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel label_ActualizarCuota;
     private javax.swing.JLabel label_CerrarMenu;
-    private javax.swing.JLabel label_Usuarios5;
-    private javax.swing.JLabel label_Usuarios6;
-    private javax.swing.JLabel label_Usuarios7;
+    private javax.swing.JLabel label_GenerarCobro;
+    private javax.swing.JPanel panel_ActualizarCuota;
     private javax.swing.JPanel panel_CerrarMenu;
-    private javax.swing.JPanel panel_Usuarios5;
-    private javax.swing.JPanel panel_Usuarios6;
-    private javax.swing.JPanel panel_Usuarios7;
+    private javax.swing.JPanel panel_GenerarCobro;
     // End of variables declaration//GEN-END:variables
 }

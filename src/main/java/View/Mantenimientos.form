@@ -325,7 +325,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="panel_Usuarios8">
+        <Container class="javax.swing.JPanel" name="panel_Reservas">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="45" green="41" red="42" type="rgb"/>
@@ -345,19 +345,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                      <Component id="label_Usuarios8" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_Reservas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="58" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label_Usuarios8" alignment="0" pref="50" max="32767" attributes="0"/>
+                  <Component id="label_Reservas" alignment="0" pref="50" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="label_Usuarios8">
+            <Component class="javax.swing.JLabel" name="label_Reservas">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto" size="20" style="1"/>
@@ -469,7 +469,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="panel_Usuarios9">
+        <Container class="javax.swing.JPanel" name="panel_ReservaActividades">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="45" green="41" red="42" type="rgb"/>
@@ -492,19 +492,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="label_Usuarios9" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_ReservaActividades" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label_Usuarios9" alignment="0" pref="50" max="32767" attributes="0"/>
+                  <Component id="label_ReservaActividades" alignment="0" pref="50" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="label_Usuarios9">
+            <Component class="javax.swing.JLabel" name="label_ReservaActividades">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto" size="20" style="1"/>

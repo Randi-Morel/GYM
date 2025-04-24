@@ -25,7 +25,25 @@ public class ControlHorarioActividades {
         this.vistaPrincipal = vistaPrincipal;
         this.controlHome = controlHome;
         iniciarEventos();
+        cargarComboDias();
         cargarComboLocalizaciones();
+    }
+     
+     public void cargarComboDias() {
+        JComboBox<String> combo = vista.getCID_Dia();
+        combo.removeAllItems();
+
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/Models/dias.txt"))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(";", -1);
+                if (partes.length >= 1) {
+                    combo.addItem(partes[0] + " - " + partes[1]);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("❌ Error al cargar dias: " + e.getMessage());
+        }
     }
      
     public void cargarComboLocalizaciones() {
@@ -95,8 +113,15 @@ public class ControlHorarioActividades {
                         String[] partes = linea.split(";", -1);
                         if (partes.length >= 2) {
                             vista.getLabel_Estado().setText("Modificando");
-                            vista.getT_Dia().setText(partes[1]);
                             vista.getT_Hora().setText(partes[2]);
+                            
+                            for (int i = 0; i < vista.getCID_Dia().getItemCount(); i++) {
+                                String item = vista.getCID_Dia().getItemAt(i);
+                                if (item.startsWith(partes[1] + " -") || item.equals(partes[1])) {
+                                    vista.getCID_Dia().setSelectedIndex(i);
+                                    break;
+                                }
+                            }
 
                             for (int i = 0; i < vista.getCID_Localizacion().getItemCount(); i++) {
                                 String item = vista.getCID_Localizacion().getItemAt(i);
@@ -138,7 +163,6 @@ public class ControlHorarioActividades {
      
     public boolean validarCampos() {
         String id = vista.getTID_Horario().getText().trim();
-        String dia = vista.getT_Dia().getText().trim();
         String hora = vista.getT_Hora().getText().trim();
 
         if (id.isEmpty()) {
@@ -146,13 +170,13 @@ public class ControlHorarioActividades {
             return false;
         }
 
-        if (dia.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "⚠️ El campo Dia es obligatorio.");
-            return false;
-        }
-
         if (hora.isEmpty()) {
             JOptionPane.showMessageDialog(null, "⚠️ El campo Hora es obligatorio.");
+            return false;
+        }
+        
+        if (vista.getCID_Dia().getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(null, "⚠️ Debes seleccionar un Día.");
             return false;
         }
 
@@ -166,8 +190,14 @@ public class ControlHorarioActividades {
      
     private String construirLineaActividad() {
         String id = vista.getTID_Horario().getText().trim();
-        String dia = vista.getT_Dia().getText().trim();
         String hora = vista.getT_Hora().getText().trim();
+        
+        String idDia = "";
+        
+        if (vista.getCID_Dia().getSelectedItem() != null) {
+            String seleccionado = vista.getCID_Dia().getSelectedItem().toString();
+            idDia = seleccionado.split(" - ")[0].trim();
+        }
    
         String idLocalizacion = "";
         
@@ -176,18 +206,18 @@ public class ControlHorarioActividades {
             idLocalizacion = seleccionado.split(" - ")[0].trim();
         }
 
-        return id + ";" + dia + ";" + hora + ";" + idLocalizacion;
+        return id + ";" + idDia + ";" + hora + ";" + idLocalizacion;
     }
     
     private void limpiarCampos() {
-        vista.getT_Dia().setText("");
+        vista.getCID_Dia().setSelectedIndex(0);
         vista.getT_Hora().setText("");
         vista.getCID_Localizacion().setSelectedIndex(0);
     }
     
     private void limpiarCamposConID() {
         vista.getTID_Horario().setText("");
-        vista.getT_Dia().setText("");
+        vista.getCID_Dia().setSelectedIndex(0);
         vista.getT_Hora().setText("");
         vista.getCID_Localizacion().setSelectedIndex(0);
     }

@@ -5,11 +5,12 @@ import View.Cliente;
 import View.Home;
 import View.Mantenimientos;
 import java.awt.BorderLayout;
-import java.time.LocalDate;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class ControlCliente {
     private final Cliente vista;
@@ -51,7 +52,7 @@ public class ControlCliente {
                     return;
                 }
 
-                new ArchivoClientes().eliminarPorIDEntrenador(id);
+                new ArchivoClientes().eliminarPorID(id);
                 JOptionPane.showMessageDialog(null, "🗑️ Cliente eliminado (si existía).");
                 limpiarCamposConID();
             }
@@ -69,7 +70,7 @@ public class ControlCliente {
                 }
 
                 SwingUtilities.invokeLater(() -> {
-                    String linea = new ArchivoClientes().buscarPorIDEntrenador(idTexto);
+                    String linea = new ArchivoClientes().buscarPorID(idTexto);
 
                     if (linea != null) {
                         String[] partes = linea.split(";", -1);
@@ -79,8 +80,16 @@ public class ControlCliente {
                             vista.getT_Nombre().setText(partes[1]);
                             vista.getT_Apellido1().setText(partes[2]);
                             vista.getT_Apellido2().setText(partes[3]);
-                            vista.getT_FechaNacimiento().setText(partes[4]);
-                            vista.getT_FechaIngreso().setText(partes[5]);
+                            try {
+                                SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+                                Date fechaNacimiento = formato.parse(partes[4]);
+                                Date fechaIngreso = formato.parse(partes[5]);
+
+                                vista.getD_FechaNacimiento().setDate(fechaNacimiento);
+                                vista.getD_FechaIngreso().setDate(fechaIngreso);
+                            } catch (ParseException e) {
+                                vista.getD_FechaIngreso().setDate(null);
+                            }
                             vista.getT_Telefono().setText(partes[6]);
                             vista.getT_Celular().setText(partes[7]);
                             vista.getT_Direccion().setText(partes[8]);
@@ -135,56 +144,62 @@ public class ControlCliente {
     }
      
     public boolean validarCampos() {
-    String id = vista.getTID_Cliente().getText().trim();
-    String nombre = vista.getT_Nombre().getText().trim();
-    String apellido1 = vista.getT_Apellido1().getText().trim();
-    String apellido2 = vista.getT_Apellido2().getText().trim();
-    String fechaNacimiento = vista.getT_FechaNacimiento().getText().trim();
-    String fechaIngreso = vista.getT_FechaIngreso().getText().trim();
-    String telefono = vista.getT_Telefono().getText().trim();
-    String celular = vista.getT_Celular().getText().trim();
-    String direccion = vista.getT_Direccion().getText().trim();
+        String id = vista.getTID_Cliente().getText().trim();
+        String nombre = vista.getT_Nombre().getText().trim();
+        String apellido1 = vista.getT_Apellido1().getText().trim();
+        String apellido2 = vista.getT_Apellido2().getText().trim();
+        
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        String fechaIngreso = formato.format(vista.getD_FechaIngreso().getDate());
+        String fechaNacimiento = formato.format(vista.getD_FechaNacimiento().getDate());
 
-    if (id.isEmpty() || !id.matches("\\d+")) {
-        JOptionPane.showMessageDialog(null, "❌ El ID es obligatorio y debe ser numérico.");
-        return false;
+        String telefono = vista.getT_Telefono().getText().trim();
+        String celular = vista.getT_Celular().getText().trim();
+        String direccion = vista.getT_Direccion().getText().trim();
+
+        if (id.isEmpty() || !id.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "❌ El ID es obligatorio y debe ser numérico.");
+            return false;
+        }
+
+        if (nombre.isEmpty() || apellido1.isEmpty() || apellido2.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "⚠️ Nombre y apellidos son obligatorios.");
+            return false;
+        }
+
+        if (fechaNacimiento.isEmpty() || fechaIngreso.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "⚠️ Las fechas son obligatorias.");
+            return false;
+        }
+
+        if (telefono.isEmpty() || celular.isEmpty() || direccion.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "⚠️ Teléfono, celular, dirección y correo son obligatorios.");
+            return false;
+        }
+
+        if (vista.getCID_EstadoCliente().getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(null, "⚠️ Debes seleccionar un Estado del Cliente.");
+            return false;
+        }
+
+        if (vista.getCID_TipoCliente().getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(null, "⚠️ Debes seleccionar un Tipo de Cliente.");
+            return false;
+        }
+
+        return true;
     }
-
-    if (nombre.isEmpty() || apellido1.isEmpty() || apellido2.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "⚠️ Nombre y apellidos son obligatorios.");
-        return false;
-    }
-
-    if (fechaNacimiento.isEmpty() || fechaIngreso.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "⚠️ Las fechas son obligatorias.");
-        return false;
-    }
-
-    if (telefono.isEmpty() || celular.isEmpty() || direccion.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "⚠️ Teléfono, celular, dirección y correo son obligatorios.");
-        return false;
-    }
-
-    if (vista.getCID_EstadoCliente().getSelectedItem() == null) {
-        JOptionPane.showMessageDialog(null, "⚠️ Debes seleccionar un Estado del Cliente.");
-        return false;
-    }
-
-    if (vista.getCID_TipoCliente().getSelectedItem() == null) {
-        JOptionPane.showMessageDialog(null, "⚠️ Debes seleccionar un Tipo de Cliente.");
-        return false;
-    }
-
-    return true;
-}
      
     private String construirLineaCliente() {
         String id = vista.getTID_Cliente().getText().trim();
         String nombre = vista.getT_Nombre().getText().trim();
         String apellido1 = vista.getT_Apellido1().getText().trim();
         String apellido2 = vista.getT_Apellido2().getText().trim();
-        String fechaNacimiento = vista.getT_FechaNacimiento().getText().trim();
-        String fechaIngreso = vista.getT_FechaIngreso().getText().trim();
+        
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        String fechaNacimiento = formato.format(vista.getD_FechaNacimiento().getDate());
+        String fechaIngreso = formato.format(vista.getD_FechaIngreso().getDate());
+        
         String telefono = vista.getT_Telefono().getText().trim();
         String celular = vista.getT_Celular().getText().trim();
         String direccion = vista.getT_Direccion().getText().trim();
@@ -208,8 +223,10 @@ public class ControlCliente {
         vista.getT_Telefono().setText("");
         vista.getT_Celular().setText("");
         vista.getT_Correo().setText("");
-        vista.getT_FechaIngreso().setText(LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-        vista.getT_FechaNacimiento().setText("");
+        
+        vista.getD_FechaIngreso().setDate(new java.util.Date());
+        vista.getD_FechaNacimiento().setDate(null);
+    
         vista.getT_Balance().setText("");
         vista.getT_ValorCuota().setText("");
         vista.getCID_EstadoCliente().setSelectedIndex(0);
@@ -225,8 +242,10 @@ public class ControlCliente {
         vista.getT_Telefono().setText("");
         vista.getT_Celular().setText("");
         vista.getT_Correo().setText("");
-        vista.getT_FechaIngreso().setText(LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-        vista.getT_FechaNacimiento().setText("");
+        
+        vista.getD_FechaIngreso().setDate(new java.util.Date());
+        vista.getD_FechaNacimiento().setDate(null);
+        
         vista.getT_Balance().setText("");
         vista.getT_ValorCuota().setText("");
         vista.getCID_EstadoCliente().setSelectedIndex(0);

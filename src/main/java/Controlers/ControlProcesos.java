@@ -1,9 +1,10 @@
 package Controlers;
 
-import Models.ArchivoUsuarios;
+import View.ActualizarCuotas;
+import View.GenerarCobro;
 import View.Home;
 import View.Procesos;
-import View.Usuario;
+import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 public class ControlProcesos {
@@ -32,6 +33,42 @@ public class ControlProcesos {
                 cerrarPanel();
             }
         });
+        
+        vista.getLabel_GenerarCobro().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GenerarCobro panelGenerarCobro = new GenerarCobro();
+                new ControlGenerarCobro(panelGenerarCobro, vistaPrincipal, controladorHome);
+                cargarPantalla(panelGenerarCobro);
+            }
+        });
+
+        vista.getPanel_GenerarCobro().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GenerarCobro panelGenerarCobro = new GenerarCobro();
+                new ControlGenerarCobro(panelGenerarCobro, vistaPrincipal, controladorHome);
+                cargarPantalla(panelGenerarCobro);
+            }
+        });
+        
+        vista.getLabel_ActualizarCuota().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ActualizarCuotas panelActualizarCuotas = new ActualizarCuotas();
+                new ControlActualizarCuota(panelActualizarCuotas, vistaPrincipal, controladorHome);
+                cargarPantalla(panelActualizarCuotas);
+            }
+        });
+
+        vista.getPanel_ActualizarCuota().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ActualizarCuotas panelActualizarCuotas = new ActualizarCuotas();
+                new ControlActualizarCuota(panelActualizarCuotas, vistaPrincipal, controladorHome);
+                cargarPantalla(panelActualizarCuotas);
+            }
+        });
     }
      
     private void cerrarPanel() {
@@ -43,6 +80,15 @@ public class ControlProcesos {
 
         contenedor.revalidate();
         contenedor.repaint();
+    }
+    
+    private void cargarPantalla(JPanel panelNuevo) {
+        JPanel contenedor = vistaPrincipal.getPanel_ControlPantallas();
+        contenedor.removeAll();                         
+        contenedor.setLayout(new BorderLayout());       
+        contenedor.add(panelNuevo, BorderLayout.CENTER);
+        contenedor.revalidate();                        
+        contenedor.repaint();                           
     }
 }
 

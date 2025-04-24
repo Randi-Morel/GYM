@@ -4,6 +4,7 @@ import View.Consultas;
 import View.Login;
 import View.Home;
 import View.Mantenimientos;
+import View.Movimientos;
 import View.Procesos;
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -49,6 +50,15 @@ public class ControlHome {
                 Procesos panelProcesos = new Procesos();
                 new ControlProcesos(panelProcesos, vista, ControlHome.this);
                 cargarPantalla(panelProcesos);
+            }
+        });
+        
+        vista.getLabel_Movimientos().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Movimientos panelMovimientos = new Movimientos();
+                new ControlMovimientos(panelMovimientos, vista, ControlHome.this);
+                cargarPantalla(panelMovimientos);
             }
         });
         

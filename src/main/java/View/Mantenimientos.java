@@ -80,6 +80,22 @@ public class Mantenimientos extends javax.swing.JPanel {
     public JPanel getPanel_Clientes() {
         return panel_Clientes;
     }
+    
+    public JLabel getLabel_Reservas() {
+        return label_Reservas;
+    }
+    
+    public JPanel getPanel_Reservas() {
+        return panel_Reservas;
+    }
+    
+    public JLabel getLabel_ReservaActividades() {
+        return label_ReservaActividades;
+    }
+    
+    public JPanel getPanel_ReservaActividades() {
+        return panel_ReservaActividades;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -98,14 +114,14 @@ public class Mantenimientos extends javax.swing.JPanel {
         label_Actividades = new javax.swing.JLabel();
         panel_Horario = new javax.swing.JPanel();
         label_Horario = new javax.swing.JLabel();
-        panel_Usuarios8 = new javax.swing.JPanel();
-        label_Usuarios8 = new javax.swing.JLabel();
+        panel_Reservas = new javax.swing.JPanel();
+        label_Reservas = new javax.swing.JLabel();
         panel_Clientes = new javax.swing.JPanel();
         label_Clientes = new javax.swing.JLabel();
         panel_EstadoReserva = new javax.swing.JPanel();
         label_EstadoReserva = new javax.swing.JLabel();
-        panel_Usuarios9 = new javax.swing.JPanel();
-        label_Usuarios9 = new javax.swing.JLabel();
+        panel_ReservaActividades = new javax.swing.JPanel();
+        label_ReservaActividades = new javax.swing.JLabel();
         panel_CerrarMenu = new javax.swing.JPanel();
         label_CerrarMenu = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -257,29 +273,29 @@ public class Mantenimientos extends javax.swing.JPanel {
 
         bg.add(panel_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 200, -1));
 
-        panel_Usuarios8.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_Reservas.setBackground(new java.awt.Color(66, 65, 69));
+        panel_Reservas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        label_Usuarios8.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios8.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios8.setText("Reservas");
-        label_Usuarios8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_Reservas.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        label_Reservas.setForeground(new java.awt.Color(255, 255, 255));
+        label_Reservas.setText("Reservas");
+        label_Reservas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout panel_Usuarios8Layout = new javax.swing.GroupLayout(panel_Usuarios8);
-        panel_Usuarios8.setLayout(panel_Usuarios8Layout);
-        panel_Usuarios8Layout.setHorizontalGroup(
-            panel_Usuarios8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Usuarios8Layout.createSequentialGroup()
+        javax.swing.GroupLayout panel_ReservasLayout = new javax.swing.GroupLayout(panel_Reservas);
+        panel_Reservas.setLayout(panel_ReservasLayout);
+        panel_ReservasLayout.setHorizontalGroup(
+            panel_ReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_ReservasLayout.createSequentialGroup()
                 .addGap(59, 59, 59)
-                .addComponent(label_Usuarios8)
+                .addComponent(label_Reservas)
                 .addContainerGap(58, Short.MAX_VALUE))
         );
-        panel_Usuarios8Layout.setVerticalGroup(
-            panel_Usuarios8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios8, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        panel_ReservasLayout.setVerticalGroup(
+            panel_ReservasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_Reservas, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        bg.add(panel_Usuarios8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 200, -1));
+        bg.add(panel_Reservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 200, -1));
 
         panel_Clientes.setBackground(new java.awt.Color(66, 65, 69));
         panel_Clientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -329,30 +345,30 @@ public class Mantenimientos extends javax.swing.JPanel {
 
         bg.add(panel_EstadoReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 200, -1));
 
-        panel_Usuarios9.setBackground(new java.awt.Color(66, 65, 69));
-        panel_Usuarios9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panel_Usuarios9.setPreferredSize(new java.awt.Dimension(200, 50));
+        panel_ReservaActividades.setBackground(new java.awt.Color(66, 65, 69));
+        panel_ReservaActividades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_ReservaActividades.setPreferredSize(new java.awt.Dimension(200, 50));
 
-        label_Usuarios9.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        label_Usuarios9.setForeground(new java.awt.Color(255, 255, 255));
-        label_Usuarios9.setText("Reserva Actividades");
-        label_Usuarios9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_ReservaActividades.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        label_ReservaActividades.setForeground(new java.awt.Color(255, 255, 255));
+        label_ReservaActividades.setText("Reserva Actividades");
+        label_ReservaActividades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout panel_Usuarios9Layout = new javax.swing.GroupLayout(panel_Usuarios9);
-        panel_Usuarios9.setLayout(panel_Usuarios9Layout);
-        panel_Usuarios9Layout.setHorizontalGroup(
-            panel_Usuarios9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_Usuarios9Layout.createSequentialGroup()
+        javax.swing.GroupLayout panel_ReservaActividadesLayout = new javax.swing.GroupLayout(panel_ReservaActividades);
+        panel_ReservaActividades.setLayout(panel_ReservaActividadesLayout);
+        panel_ReservaActividadesLayout.setHorizontalGroup(
+            panel_ReservaActividadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_ReservaActividadesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label_Usuarios9)
+                .addComponent(label_ReservaActividades)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        panel_Usuarios9Layout.setVerticalGroup(
-            panel_Usuarios9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_Usuarios9, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        panel_ReservaActividadesLayout.setVerticalGroup(
+            panel_ReservaActividadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_ReservaActividades, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        bg.add(panel_Usuarios9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, -1, -1));
+        bg.add(panel_ReservaActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, -1, -1));
 
         panel_CerrarMenu.setBackground(new java.awt.Color(66, 65, 69));
         panel_CerrarMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -405,10 +421,10 @@ public class Mantenimientos extends javax.swing.JPanel {
     private javax.swing.JLabel label_EstadoReserva;
     private javax.swing.JLabel label_Horario;
     private javax.swing.JLabel label_Localizacion;
+    private javax.swing.JLabel label_ReservaActividades;
+    private javax.swing.JLabel label_Reservas;
     private javax.swing.JLabel label_Salas;
     private javax.swing.JLabel label_Usuarios;
-    private javax.swing.JLabel label_Usuarios8;
-    private javax.swing.JLabel label_Usuarios9;
     private javax.swing.JPanel panel_Actividades;
     private javax.swing.JPanel panel_CerrarMenu;
     private javax.swing.JPanel panel_Clientes;
@@ -416,9 +432,9 @@ public class Mantenimientos extends javax.swing.JPanel {
     private javax.swing.JPanel panel_EstadoReserva;
     private javax.swing.JPanel panel_Horario;
     private javax.swing.JPanel panel_Localizacion;
+    private javax.swing.JPanel panel_ReservaActividades;
+    private javax.swing.JPanel panel_Reservas;
     private javax.swing.JPanel panel_Salas;
     private javax.swing.JPanel panel_Usuarios;
-    private javax.swing.JPanel panel_Usuarios8;
-    private javax.swing.JPanel panel_Usuarios9;
     // End of variables declaration//GEN-END:variables
 }

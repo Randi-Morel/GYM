@@ -1,2 +1,22 @@
 1;Sala Principal;Sala Principal;1;
 2;Sala Secundaria;Sala Secundaria;1;
+3;Sala de Reuniones A;Sala equipada para reuniones ejecutivas;2
+4;Sala de Reuniones B;Sala mediana con proyector;2
+5;Sala de Entrenamiento 1;Espacio para entrenamientos grupales;3
+6;Sala de Entrenamiento 2;Sala con pizarras y sillas móviles;3
+7;Sala Virtual;Sala equipada para videoconferencias;4
+8;Sala de Exámenes;Ambiente tranquilo para evaluaciones;4
+9;Sala de Proyectos;Área para desarrollo de proyectos;5
+10;Sala Creativa;Espacio con mesas modulares;5
+11;Sala de Conferencias;Capacidad para 100 personas;6
+12;Sala VIP;Sala privada con servicios premium;6
+13;Sala Técnica;Sala con equipos tecnológicos;7
+14;Sala de Capacitación A;Ambiente académico estándar;7
+15;Sala de Capacitación B;Ambiente académico multimedia;7
+16;Sala Ejecutiva;Sala con mesa central y pantallas;8
+17;Sala de Entrevistas;Espacio privado para entrevistas;8
+18;Sala Modular 1;Sala configurable según el evento;9
+19;Sala Modular 2;Sala versátil con divisores;9
+20;Sala de Estrategia;Espacio para planificación estratégica;10
+21;Sala de Coaching;Ambiente relajado para sesiones individuales;10
+22;Sala Verde;Decoración ecoamigable;10
