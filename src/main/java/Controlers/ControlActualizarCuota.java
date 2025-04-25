@@ -1,6 +1,7 @@
 package Controlers;
 
 import Models.ArchivoClientes;
+import Models.ArchivoCobro;
 import Models.ArchivoEncabezadoCuota;
 import View.ActualizarCuotas;
 import View.Home;
@@ -10,7 +11,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ControlActualizarCuota {
     private final ActualizarCuotas vista;
@@ -42,6 +45,9 @@ public class ControlActualizarCuota {
                         JOptionPane.showMessageDialog(null, "ℹ️ No hay cuentas por cobrar en ese rango.");
                     } else {
                         new ArchivoClientes().actualizarBalancesDesdeRegistros(registrosCobrados);
+                        
+                        new ArchivoCobro().marcarCobrosComoCobradosDesdeCuotas(registrosCobrados);
+                        
                         JOptionPane.showMessageDialog(null, "✅ Se marcaron como cobradas y se actualizaron balances.");
                     }
                 }

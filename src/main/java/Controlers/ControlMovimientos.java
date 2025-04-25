@@ -42,6 +42,21 @@ public class ControlMovimientos {
             public void mouseClicked(java.awt.event.MouseEvent e) {
                 if (validarCampos()) {
                     String id = vista.getTID_Cuota().getText().trim();
+                    
+                    String existente = new ArchivoEncabezadoCuota().buscarPorID(id);
+                    if (existente != null) {
+                        String[] partes = existente.split(";", -1);
+                        if (partes.length >= 5 && partes[4].trim().equalsIgnoreCase("true")) {
+                            JOptionPane.showMessageDialog(
+                                null,
+                                "❌ Esta cuota ya fue cobrada.\nLos cambios no se pueden guardar.",
+                                "Acción no permitida",
+                                JOptionPane.ERROR_MESSAGE
+                            );
+                            return;
+                        }
+                    }
+                    
                     String linea = construirLineaCuota();
 
                     new ArchivoEncabezadoCuota().guardarOEditarPorID(linea, id);
@@ -67,6 +82,8 @@ public class ControlMovimientos {
 
                 if (idCuota.isEmpty()) {
                     vista.getLabel_Estado().setText("Creando");
+                    llenarTablaCuotaConCobros();
+                    limpiarCampos();
                     return;
                 }
 
@@ -76,6 +93,16 @@ public class ControlMovimientos {
                     if (lineaCuota != null) {
                         String[] partes = lineaCuota.split(";", -1);
                         if (partes.length >= 5) {
+                            String estado = partes[4].trim();
+                            if (estado.equalsIgnoreCase("true")) {
+                                JOptionPane.showMessageDialog(
+                                    null,
+                                    "Esta cuota ya fue cobrada.\nLos cambios no se guardarán.",
+                                    "Aviso",
+                                    JOptionPane.WARNING_MESSAGE
+                                );
+                            }
+                            
                             vista.getLabel_Estado().setText("Modificando");
 
                             try {
@@ -96,6 +123,8 @@ public class ControlMovimientos {
                         }
                     } else {
                         vista.getLabel_Estado().setText("Creando");
+                        llenarTablaCuotaConCobros();
+                        limpiarCampos();
                     }
                 });
             }
@@ -199,13 +228,19 @@ public class ControlMovimientos {
 
         String idCliente = vista.getTID_Cliente().getText().trim();
 
-        String valorTexto = vista.getT_ValorCobro().getText().replace("RD$", "").replace(",", "").trim();
-        double valorNumerico = Double.parseDouble(valorTexto);
-        String valorCobro = String.format(Locale.US, "%.2f", valorNumerico);
+        String valorCobro = vista.getT_ValorCobro().getText().replace("RD$", "").trim();
 
         String estado = "false";
         
         return String.join(";", idCuota, fechaCuota, idCliente, valorCobro, estado);
+    }
+    
+    private void limpiarCampos() {
+        vista.getTID_Cliente().setText("");
+        vista.getT_ClienteNombre().setText("");
+        vista.getT_ClienteApellido().setText("");
+        vista.getT_ValorCobro().setText("RD$0.00");
+        vista.getD_FechaCuota().setDate(new java.util.Date());
     }
     
     private void limpiarCamposConID() {
@@ -226,17 +261,25 @@ public class ControlMovimientos {
         int secuencia = 1;
         
         Set<String> cobrosYaGuardados = new ArchivoDetalleCuota().obtenerCobrosDeDetalle(idCuota);
-
+        boolean estaModificando = vista.getLabel_Estado().getText().equalsIgnoreCase("Modificando");
+        
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/Models/cobro.txt"))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(";", -1);
+                
                 if (partes.length >= 5 && partes[2].trim().equals(idCliente)) {
                     String idCobro = partes[0];
                     String valor = partes[3];
                     String concepto = partes[4];
+                    String estatus = partes[5].trim().toLowerCase();
 
                     boolean estaSeleccionado = cobrosYaGuardados.contains(idCobro);
+                    
+                    if (!estaModificando && estatus.equals("true")) {
+                        System.out.println("⛔ Cobro ya pagado omitido (modo creación): " + idCobro);
+                        continue;
+                    }
                     
                     modelo.addRow(new Object[] {
                         idCuota,

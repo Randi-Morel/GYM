@@ -112,9 +112,9 @@ public class Cliente extends javax.swing.JPanel {
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel1.setText("Mantenimiento de Entrenadores:");
+        jLabel1.setText("Mantenimiento de Cliente:");
         jLabel1.setToolTipText("");
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
 
         TID_Cliente.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         bg.add(TID_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 230, 30));
@@ -237,7 +237,7 @@ public class Cliente extends javax.swing.JPanel {
 
         label_Estado.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         label_Estado.setText("Creando");
-        bg.add(label_Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, -1));
+        bg.add(label_Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, -1, -1));
 
         T_Telefono.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         bg.add(T_Telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 230, 30));

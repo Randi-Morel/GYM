@@ -1,4 +1,4 @@
-1;Prueba;Prueba 2;Prueba 2;01/04/2005;10/04/2025;123456;123456;Prueba 2;;45.00;15.00;Activo;Socio Activo
+1;Prueba;Prueba 2;Prueba 2;01/04/2005;10/04/2025;123456;123456;Prueba 2;;0.00;15.00;Activo;Socio Activo
 2;Randi;Morel;Acevedo;01/04/2005;13/04/2025;8099950097;8099950097;calle siempre viva #9;randi@gmail.com;1500.00;1500.00;Activo;Socio Activo
 3;Carlos;Pérez;Ramírez;15/03/1990;01/01/2024;8091234567;8091234568;Av. Bolívar 123;carlospr@gmail.com;3500.00;500.00;Activo;Socio Activo
 4;María;Gómez;López;22/07/1985;02/01/2024;;;C/ Duarte #45;maria.lopez@hotmail.com;0.00;300.00;Inactivo;Socio Pasivo

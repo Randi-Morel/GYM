@@ -1,7 +1,6 @@
 package Controlers;
 
 import Models.ArchivoEstadoReserva;
-import Models.ArchivoLocalizaciones;
 import View.EstadoReserva;
 import View.Home;
 import View.Mantenimientos;
@@ -115,11 +114,11 @@ public class ControlEstadoReserva {
         int estado = vista.getC_Estado().getSelectedIndex();
 
         if (id.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "⚠️ El campo ID del entrenador es obligatorio.");
+            JOptionPane.showMessageDialog(null, "⚠️ El campo ID del estado es obligatorio.");
             return false;
         }
         if (estado < 0) {
-            JOptionPane.showMessageDialog(null, "⚠️ Debes seleccionar un Nivel de Acceso válido.");
+            JOptionPane.showMessageDialog(null, "⚠️ El campo estado es obligatorio.");
             return false;
         }
         

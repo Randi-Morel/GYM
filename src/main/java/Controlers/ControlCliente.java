@@ -24,6 +24,7 @@ public class ControlCliente {
         this.vistaPrincipal = vistaPrincipal;
         this.controlHome = controlHome;
         iniciarEventos();
+        establecerValoresPorDefecto();
     }
      
     private void iniciarEventos() {
@@ -141,6 +142,11 @@ public class ControlCliente {
 
         contenedor.revalidate();
         contenedor.repaint();
+    }
+    
+    private void establecerValoresPorDefecto() {
+        vista.getT_Balance().setText("0.00");
+        vista.getT_ValorCuota().setText("0.00");
     }
      
     public boolean validarCampos() {

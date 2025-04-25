@@ -72,9 +72,9 @@ public class HoraActividades extends javax.swing.JPanel {
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel1.setText("Mantenimiento de Salas:");
+        jLabel1.setText("Mantenimiento de Horario de Actividades:");
         jLabel1.setToolTipText("");
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
         TID_Horario.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         bg.add(TID_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 230, 30));

@@ -106,7 +106,7 @@ public class GenerarCobro extends javax.swing.JPanel {
         bg.add(panel_Procesar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 530, 160, 50));
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 230, 10));
+        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 130, 10));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setText("*Año del cobro:");
@@ -116,7 +116,7 @@ public class GenerarCobro extends javax.swing.JPanel {
         bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 230, 10));
 
         D_Mes.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        bg.add(D_Mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 230, 30));
+        bg.add(D_Mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 140, 30));
 
         D_Ano.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         bg.add(D_Ano, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 230, 30));
