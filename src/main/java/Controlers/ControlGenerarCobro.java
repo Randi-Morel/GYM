@@ -2,6 +2,8 @@ package Controlers;
 
 import Models.ArchivoClientes;
 import Models.ArchivoCobro;
+import Models.FacturaData;
+import Models.FacturaPDFGenerator;
 import View.GenerarCobro;
 import View.Home;
 import View.Mantenimientos;
@@ -36,6 +38,15 @@ public class ControlGenerarCobro {
                     
                     int mes = vista.getD_Mes().getMonth();
                     int año = vista.getD_Ano().getYear();
+                    
+                    Calendar hoy = Calendar.getInstance();
+                    int mesActual = hoy.get(Calendar.MONTH);
+                    int añoActual = hoy.get(Calendar.YEAR);
+                    
+                    if (año > añoActual || (año == añoActual && mes > mesActual)) {
+                        JOptionPane.showMessageDialog(null, "❌ No se pueden generar cobros para meses futuros.", "Error", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
 
                     String fechaCobro = obtenerUltimoDiaDelMes(mes, año);
 
@@ -51,11 +62,42 @@ public class ControlGenerarCobro {
                         JOptionPane.showMessageDialog(null, "⚠️ No hay clientes válidos para generar cobros.");
                         return;
                     }
+                    
+                    ArchivoClientes archivoClientes = new ArchivoClientes();
+                    List<String> clientes = archivoClientes.leerTodo();
+                    
+                    List<FacturaData> datosFacturas = new java.util.ArrayList<>();
+                    String conceptoGeneral = "";
 
                     for (String linea : cobrosGenerados) {
                         archivoCobro.guardarLineaNueva(linea);
+
+                        String[] partes = linea.split(";", -1);
+                        String idCobro = partes[0];
+                        String fecha = partes[1];
+                        String idCliente = partes[2];
+                        String valor = partes[3];
+                        String concepto = partes[4];
+
+                        conceptoGeneral = concepto; // para el nombre del PDF
+
+                        // Buscar datos del cliente
+                        String nombre = "", correo = "", direccion = "";
+                        for (String c : clientes) {
+                            String[] pc = c.split(";", -1);
+                            if (pc.length >= 10 && pc[0].trim().equals(idCliente)) {
+                                nombre = pc[1].trim() + " " + pc[2].trim() + " " + pc[3].trim();
+                                correo = pc[9].trim();
+                                direccion = pc[8].trim();
+                                break;
+                            }
+                        }
+
+                        datosFacturas.add(new FacturaData(idCliente, nombre, correo, direccion, concepto, valor, fecha, idCobro));
                     }
                     
+                    FacturaPDFGenerator.generarFacturaGlobal(datosFacturas, conceptoGeneral);
+
                     new ArchivoClientes().actualizarBalances(cobrosGenerados);
 
                     JOptionPane.showMessageDialog(null, "✅ Cobros generados correctamente.");

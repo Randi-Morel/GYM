@@ -1,22 +1,22 @@
 1;Prueba;Prueba 2;Prueba 2;01/04/2005;10/04/2025;123456;123456;Prueba 2;;0.00;15.00;Activo;Socio Activo
-2;Randi;Morel;Acevedo;01/04/2005;13/04/2025;8099950097;8099950097;calle siempre viva #9;randi@gmail.com;1500.00;1500.00;Activo;Socio Activo
-3;Carlos;Pérez;Ramírez;15/03/1990;01/01/2024;8091234567;8091234568;Av. Bolívar 123;carlospr@gmail.com;3500.00;500.00;Activo;Socio Activo
+2;Randi;Morel;Acevedo;01/04/2005;13/04/2025;8099950097;8099950097;calle siempre viva #9;randi@gmail.com;0.00;1500.00;Activo;Socio Activo
+3;Carlos;Pérez;Ramírez;15/03/1990;01/01/2024;8091234567;8091234568;Av. Bolívar 123;carlospr@gmail.com;0.00;500.00;Activo;Socio Activo
 4;María;Gómez;López;22/07/1985;02/01/2024;;;C/ Duarte #45;maria.lopez@hotmail.com;0.00;300.00;Inactivo;Socio Pasivo
-5;Luis;Martínez;Fernández;30/12/1992;10/01/2024;8294441122;;Villa Olímpica, Santiago;;550.00;100.00;Activo;Socio Activo
+5;Luis;Martínez;Fernández;30/12/1992;10/01/2024;8294441122;;Villa Olímpica, Santiago;;0.00;100.00;Activo;Socio Activo
 6;Ana;Torres;Santos;08/06/1995;11/01/2024;;;Zona Universitaria;;0.00;200.00;Activo;Socio Pasivo
-7;José;Ramírez;Castro;12/01/1988;15/01/2024;8095556677;8290012233;Los Jardines, SD;jrcastro@gmail.com;1300.00;250.00;Activo;Socio Activo
+7;José;Ramírez;Castro;12/01/1988;15/01/2024;8095556677;8290012233;Los Jardines, SD;jrcastro@gmail.com;0.00;250.00;Activo;Socio Activo
 8;Patricia;López;Martínez;25/10/1993;16/01/2024;;;Ens. Ozama;;0.00;150.00;Inactivo;Socio Pasivo
-9;Andrés;Fernández;Almonte;01/05/1990;17/01/2024;8097778899;;C/ Hostos 89;andresf@gmail.com;2050.00;400.00;Activo;Socio Activo
+9;Andrés;Fernández;Almonte;01/05/1990;17/01/2024;8097778899;;C/ Hostos 89;andresf@gmail.com;0.00;400.00;Activo;Socio Activo
 10;Laura;Castillo;Reyes;09/09/1996;18/01/2024;;;La Zurza;;0.00;250.00;Inactivo;Socio Pasivo
-11;Javier;Vargas;Morales;03/04/1987;19/01/2024;8098887766;;Av. Independencia 105;javierv@gmail.com;1550.00;300.00;Activo;Socio Activo
+11;Javier;Vargas;Morales;03/04/1987;19/01/2024;8098887766;;Av. Independencia 105;javierv@gmail.com;0.00;300.00;Activo;Socio Activo
 12;Daniela;Reyes;González;27/11/1991;20/01/2024;;;El Millón;dani.reyes@hotmail.com;0.00;200.00;Activo;Socio Pasivo
-13;Miguel;Santos;Delgado;14/02/1985;22/01/2024;8091112233;;Zona Colonial;;800.00;150.00;Activo;Socio Activo
+13;Miguel;Santos;Delgado;14/02/1985;22/01/2024;8091112233;;Zona Colonial;;0.00;150.00;Activo;Socio Activo
 14;Vivian;Núñez;Paredes;05/06/1994;23/01/2024;;;Piantini;;0.00;300.00;Inactivo;Socio Pasivo
-15;Pedro;Cabrera;Vásquez;19/01/1993;24/01/2024;8295559900;;Ens. Naco;;1450.00;350.00;Activo;Socio Activo
+15;Pedro;Cabrera;Vásquez;19/01/1993;24/01/2024;8295559900;;Ens. Naco;;0.00;350.00;Activo;Socio Activo
 16;Carmen;Peña;Herrera;07/08/1989;25/01/2024;;;Bella Vista;carpena@gmail.com;0.00;250.00;Activo;Socio Pasivo
-17;Raúl;González;Matos;11/03/1997;26/01/2024;;;Los Ríos;;540.00;120.00;Activo;Socio Activo
+17;Raúl;González;Matos;11/03/1997;26/01/2024;;;Los Ríos;;0.00;120.00;Activo;Socio Activo
 18;Isabel;Luna;Del Rosario;20/05/1984;27/01/2024;8093332211;8293332211;C/ El Conde;isabel.luna@gmail.com;0.00;200.00;Activo;Socio Pasivo
-19;Esteban;Morales;Silva;17/04/1992;28/01/2024;;;Invivienda;;900.00;100.00;Inactivo;Socio Pasivo
-20;Natalia;Tejada;Acosta;29/06/1990;29/01/2024;8291122334;;Las Caobas;natalia.acosta@gmail.com;1650.00;275.00;Activo;Socio Activo
+19;Esteban;Morales;Silva;17/04/1992;28/01/2024;;;Invivienda;;0.00;100.00;Inactivo;Socio Pasivo
+20;Natalia;Tejada;Acosta;29/06/1990;29/01/2024;8291122334;;Las Caobas;natalia.acosta@gmail.com;0.00;275.00;Activo;Socio Activo
 21;Franklin;Mejía;Carpio;04/12/1995;30/01/2024;;;Gazcue;;0.00;150.00;Activo;Socio Pasivo
-22;Dayana;Salcedo;Peña;31/07/1986;31/01/2024;8095553344;8295553344;Mirador Sur;;1950.00;300.00;Activo;Socio Activo
+22;Dayana;Salcedo;Peña;31/07/1986;31/01/2024;8095553344;8295553344;Mirador Sur;;0.00;300.00;Activo;Socio Activo
