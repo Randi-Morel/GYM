@@ -1,0 +1,4 @@
+activo;0
+inactivo;0
+proceso;1
+cancelado;0
