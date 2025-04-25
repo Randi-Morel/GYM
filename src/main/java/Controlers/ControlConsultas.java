@@ -2,6 +2,9 @@ package Controlers;
 
 import View.Consultas;
 import View.ConsultasActividades;
+import View.ConsultasClientes;
+import View.ConsultasCobro;
+import View.ConsultasCuota;
 import View.ConsultasEntrenadores;
 import View.ConsultasHorarioActividades;
 import View.ConsultasLocalizaciones;
@@ -143,6 +146,60 @@ public class ControlConsultas {
                 ConsultasHorarioActividades panelConsultasHorarioActividades = new ConsultasHorarioActividades();
                 new ControlConsultasHorarioActividades(panelConsultasHorarioActividades, vistaPrincipal, controladorHome);
                 cargarPantalla(panelConsultasHorarioActividades);
+            }
+        });
+        
+        vista.getLabel_Clientes().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultasClientes panelConsultasClientes = new ConsultasClientes();
+                new ControlConsultasClientes(panelConsultasClientes, vistaPrincipal, controladorHome);
+                cargarPantalla(panelConsultasClientes);
+            }
+        });
+
+        vista.getPanel_Clientes().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultasClientes panelConsultasClientes = new ConsultasClientes();
+                new ControlConsultasClientes(panelConsultasClientes, vistaPrincipal, controladorHome);
+                cargarPantalla(panelConsultasClientes);
+            }
+        });
+        
+        vista.getLabel_Cobro().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultasCobro panelConsultasCobro = new ConsultasCobro();
+                new ControlConsultasCobros(panelConsultasCobro, vistaPrincipal, controladorHome);
+                cargarPantalla(panelConsultasCobro);
+            }
+        });
+
+        vista.getPanel_Cobro().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultasCobro panelConsultasCobro = new ConsultasCobro();
+                new ControlConsultasCobros(panelConsultasCobro, vistaPrincipal, controladorHome);
+                cargarPantalla(panelConsultasCobro);
+            }
+        });
+        
+        vista.getLabel_Cuotas().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultasCuota panelConsultasCuotas = new ConsultasCuota();
+                new ControlConsultasCuotas(panelConsultasCuotas, vistaPrincipal, controladorHome);
+                cargarPantalla(panelConsultasCuotas);
+            }
+        });
+
+        vista.getPanel_Cuotas().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultasCuota panelConsultasCuotas = new ConsultasCuota();
+                new ControlConsultasCuotas(panelConsultasCuotas, vistaPrincipal, controladorHome);
+                cargarPantalla(panelConsultasCuotas);
             }
         });
     }
