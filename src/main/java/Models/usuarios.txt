@@ -1,2 +1,12 @@
-1;Admin;Admin123;0;Admin;admin12@gmail.com
-2;Cliente;123456;1;Cliente;
+admin;Admin123;0;Nombre;Apellido;admin12@gmail.com
+cliente;123456;1;Nombre;Apellido;
+juanp;passJuan01;1;Juan;Pérez;juanp@gmail.com
+marial;claveMaria22;1;María;López;mlopez@hotmail.com
+carlosm;CmSecure33;0;Carlos;Martínez;carlos.mtz@empresa.com
+sofiag;Sofi#2023;1;Sofía;Gómez;
+pedror;pedroRR88;1;Pedro;Ramírez;pedro.ramirez@gmail.com
+laurac;LauC2024;0;Laura;Castro;laura@admin.com
+andresv;AVpass99;1;Andrés;Vargas;
+monicaa;Mona321;1;Mónica;Almonte;monica.a@correo.com
+robertf;rf2023key;1;Roberto;Fernández;
+vivians;ViviSecure10;0;Vivian;Santos;vivian@admincorp.net

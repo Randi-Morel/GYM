@@ -1,98 +1,127 @@
 package Controlers;
 
 import Models.ArchivoUsuarios;
+import View.Home;
+import View.Mantenimientos;
 import View.Usuario;
+import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 public class ControlUsuarios {
     private final Usuario vista;
+    private final Home vistaPrincipal;
+    private final ControlHome controlHome;
+    private JPanel contenedor;
+    private ControlMantenimientos controladorMantenimiento;
     
-     public ControlUsuarios(Usuario vista) {
+     public ControlUsuarios(Usuario vista, Home vistaPrincipal, ControlHome controlHome) {
         this.vista = vista;
-        
-        vista.getBtnGuardar().addActionListener(e -> {
-            if (validarCampos()) {
-                int id = Integer.parseInt(vista.getTID_Usuario().getText().trim());
-                String linea = construirLineaUsuario();
+        this.vistaPrincipal = vistaPrincipal;
+        this.controlHome = controlHome;
+        iniciarEventos();
+    }
+     
+    private void iniciarEventos() {
+        vista.getPanel_Guardar().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                if (validarCampos()) {
+                    String usuario = vista.getT_Usuario().getText().trim();
+                    String linea = construirLineaUsuario();
 
-                new ArchivoUsuarios().guardarOEditarPorID(linea, id);
+                    new ArchivoUsuarios().guardarOEditarPorID(linea, usuario);
 
-                JOptionPane.showMessageDialog(null, "✅ Usuario guardado o actualizado correctamente.");
+                    JOptionPane.showMessageDialog(null, "✅ Usuario guardado o actualizado correctamente.");
+                    limpiarCamposConUsuario();
+                }
             }
         });
         
-        vista.getBtnEliminar().addActionListener(e -> {
-            String idTexto = vista.getTID_Usuario().getText().trim();
+        vista.getPanel_Eliminar().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                String usuario = vista.getT_Usuario().getText().trim().toLowerCase();
 
-            if (idTexto.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "⚠️ Debes ingresar un ID para eliminar el usuario.");
-                return;
+                if (usuario.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "⚠️ Debes ingresar un usuario para eliminar.");
+                    return;
+                }
+
+                new ArchivoUsuarios().eliminarPorUsuario(usuario);
+                JOptionPane.showMessageDialog(null, "🗑️ Usuario eliminado (si existía).");
+                limpiarCamposConUsuario();
             }
-
-            if (!idTexto.matches("\\d+")) {
-                JOptionPane.showMessageDialog(null, "❌ El ID debe ser un número entero.");
-                return;
-            }
-
-            int id = Integer.parseInt(idTexto);
-            new ArchivoUsuarios().eliminarPorID(id);
-            JOptionPane.showMessageDialog(null, "🗑️ Usuario eliminado (si existía).");
-            limpiarCampos();
         });
         
-        vista.getTID_Usuario().addKeyListener(new java.awt.event.KeyAdapter() {
+        vista.getT_Usuario().addKeyListener(new java.awt.event.KeyAdapter() {
             @Override
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                String idTexto = vista.getTID_Usuario().getText().trim();
+                String usuarioTexto = vista.getT_Usuario().getText().trim();
 
-                if (idTexto.isEmpty()) {
-                    // Opcional
+                if (usuarioTexto.isEmpty()) {
                     limpiarCampos();
+                    vista.getLabel_Estado().setText("Creando");
                     return;
                 }
 
-                if (!idTexto.matches("\\d+")) {
-                    return;
-                }
+                SwingUtilities.invokeLater(() -> {
+                    String linea = new ArchivoUsuarios().buscarPorUsuario(usuarioTexto);
 
-                int id = Integer.parseInt(idTexto);
-                String linea = new Models.ArchivoUsuarios().buscarPorID(id);
-
-                if (linea != null) {
-                    String[] partes = linea.split(";");
-                    if (partes.length >= 6) {
-                        vista.getT_Nombre().setText(partes[1]);
-                        vista.getT_Contrasena().setText(partes[2]);
-                        vista.getT_NivelAcceso().setText(partes[3]);
-                        vista.getT_Apellidos().setText(partes[4]);
-                        vista.getT_Correo().setText(partes[5]);
+                    if (linea != null) {
+                        String[] partes = linea.split(";");
+                        if (partes.length >= 5) {
+                            vista.getLabel_Estado().setText("Modificando");
+                            vista.getT_Contrasena().setText(partes[1]);
+                            vista.getC_NivelAcceso().setSelectedIndex(Integer.parseInt(partes[2]));
+                            vista.getT_Nombre().setText(partes[3]);
+                            vista.getT_Apellidos().setText(partes[4]);
+                            if (partes.length >= 6) {
+                                vista.getT_Correo().setText(partes[5]);
+                            } else {
+                                vista.getT_Correo().setText("");
+                            }
+                        }
+                    } else {
+                        limpiarCampos();
+                        vista.getLabel_Estado().setText("Creando");
                     }
-                } else {
-                    limpiarCampos();
-                }
+                });
             }
         });
         
-        vista.getBtnSalir().addActionListener(e -> {
-            java.awt.Container contenedor = vista.getParent();
-            if (contenedor instanceof JPanel) {
-                contenedor.remove(vista);
-                contenedor.revalidate();
-                contenedor.repaint();
+        vista.getPanel_Salir().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                cerrarPanel();
             }
         });
     }
      
-     public boolean validarCampos() {
-        String id = vista.getTID_Usuario().getText().trim();
+    private void cerrarPanel() {
+        Mantenimientos panelMantenimientos = new Mantenimientos();
+        new ControlMantenimientos(panelMantenimientos, vistaPrincipal, controlHome);
+
+        JPanel contenedor = vistaPrincipal.getPanel_ControlPantallas();
+
+        contenedor.removeAll();
+        contenedor.setLayout(new BorderLayout()); // o el layout original del panel si ya tiene uno
+        contenedor.add(panelMantenimientos, BorderLayout.CENTER);
+
+        contenedor.revalidate();
+        contenedor.repaint();
+    }
+     
+    public boolean validarCampos() {
+        String usuario = vista.getT_Usuario().getText().trim();
         String nombre = vista.getT_Nombre().getText().trim();
         String apellidos = vista.getT_Apellidos().getText().trim();
         String contrasena = new String(vista.getT_Contrasena().getPassword()).trim();
-        String nivelAcceso = vista.getT_NivelAcceso().getText().trim();
+        int nivelAcceso = vista.getC_NivelAcceso().getSelectedIndex();
 
-        if (id.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "⚠️ El campo ID de usuario es obligatorio.");
+        if (usuario.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "⚠️ El campo usuario es obligatorio.");
             return false;
         }
         if (nombre.isEmpty()) {
@@ -107,37 +136,42 @@ public class ControlUsuarios {
             JOptionPane.showMessageDialog(null, "⚠️ El campo Contraseña es obligatorio.");
             return false;
         }
-        if (nivelAcceso.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "⚠️ El campo Nivel de Acceso es obligatorio.");
+        if (contrasena.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "⚠️ El campo Contraseña es obligatorio.");
             return false;
         }
-
-        if (!id.matches("\\d+")) {
-            JOptionPane.showMessageDialog(null, "❌ El campo ID solo debe contener números.");
+        if (nivelAcceso < 0) {
+            JOptionPane.showMessageDialog(null, "⚠️ Debes seleccionar un Nivel de Acceso válido.");
             return false;
         }
-        if (!nivelAcceso.matches("\\d+")) {
-            JOptionPane.showMessageDialog(null, "❌ El campo Nivel de Acceso solo debe contener números.");
-            return false;
-        }
+        
         return true;
     }
      
     private String construirLineaUsuario() {
-        String id = vista.getTID_Usuario().getText().trim();
+        String usuario = vista.getT_Usuario().getText().trim().toLowerCase();
         String nombre = vista.getT_Nombre().getText().trim();
         String contrasena = new String(vista.getT_Contrasena().getPassword()).trim();
-        String nivelAcceso = vista.getT_NivelAcceso().getText().trim();
+        int nivelAcceso = vista.getC_NivelAcceso().getSelectedIndex();
         String apellidos = vista.getT_Apellidos().getText().trim();
         String correo = vista.getT_Correo().getText().trim();
 
-        return id + ";" + nombre + ";" + contrasena + ";" + nivelAcceso + ";" + apellidos + ";" + correo;
+        return usuario + ";" + contrasena + ";" + nivelAcceso + ";" + nombre + ";" + apellidos + ";" + correo;
     }
     
     private void limpiarCampos() {
         vista.getT_Nombre().setText("");
         vista.getT_Contrasena().setText("");
-        vista.getT_NivelAcceso().setText("");
+        vista.getC_NivelAcceso().setSelectedIndex(0);
+        vista.getT_Apellidos().setText("");
+        vista.getT_Correo().setText("");
+    }
+    
+    private void limpiarCamposConUsuario() {
+        vista.getT_Usuario().setText("");
+        vista.getT_Nombre().setText("");
+        vista.getT_Contrasena().setText("");
+        vista.getC_NivelAcceso().setSelectedIndex(0);
         vista.getT_Apellidos().setText("");
         vista.getT_Correo().setText("");
     }

@@ -7,53 +7,62 @@ import javax.swing.JOptionPane;
 
 
 public class ControlLogin {
+    private final Login login;
+    
+    public ControlLogin(Login login) {
+        this.login = login;
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
+        iniciarEventos();
+    }
+    
     public static void main(String[] args) {
-        Login login = new Login();
-        try {
-            login.setVisible(true);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-         
-        login.getT_Usuario().addMouseListener(new java.awt.event.MouseAdapter() {
+        new ControlLogin(new Login());
+    }
+    
+    private void iniciarEventos() {
+        login.getT_Usuario().addKeyListener(new java.awt.event.KeyAdapter() {
             @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                if ("Ingrese el nombre de usuario".equals(login.getT_Usuario().getText())) {
-                    login.getT_Usuario().setText("");
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+                    login.getTP_Contrasena().requestFocus();
                 }
             }
         });
-         
-        login.getTP_Contrasena().addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                // Obtener el contenido del JPasswordField como String
-                char[] password = login.getTP_Contrasena().getPassword();
-                String passwordText = new String(password);
 
-                if ("S1S2S3S4".equals(passwordText)) {
-                    login.getTP_Contrasena().setText("");
+        login.getTP_Contrasena().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+                    login.getLabel_IniciarSesion().dispatchEvent(
+                        new java.awt.event.MouseEvent(
+                            login.getLabel_IniciarSesion(),
+                            java.awt.event.MouseEvent.MOUSE_CLICKED,
+                            System.currentTimeMillis(),
+                            0, 0, 0, 1, false
+                        )
+                    );
                 }
             }
         });
-        
+
         login.getLabel_IniciarSesion().addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                String usuario = login.getT_Usuario().getText();
+                String usuario = login.getT_Usuario().getText().toLowerCase();
                 String contrasena = new String(login.getTP_Contrasena().getPassword());
                 String lineaEncontrada = null;
-                
+
                 ArchivoUsuarios archivo = new ArchivoUsuarios();
                 boolean encontrado = false;
 
                 for (String linea : archivo.leerTodo()) {
-                    System.out.println("Leyendo línea: " + linea); // debug
+                    System.out.println("Leyendo línea: " + linea);
 
                     String[] partes = linea.split(";");
                     if (partes.length >= 3 &&
-                        partes[1].trim().equalsIgnoreCase(usuario) &&
-                        partes[2].trim().equals(contrasena)) {
+                        partes[0].trim().equalsIgnoreCase(usuario) &&
+                        partes[1].trim().equals(contrasena)) {
                         lineaEncontrada = linea;
                         encontrado = true;
                         break;
@@ -62,22 +71,20 @@ public class ControlLogin {
 
                 if (encontrado) {
                     String[] partes = lineaEncontrada.split(";");
-                    int nivelAcceso = Integer.parseInt(partes[3].trim());
-                    
+                    int nivelAcceso = Integer.parseInt(partes[2].trim());
+
                     Home home = new Home();
                     new ControlHome(home, nivelAcceso);
 
                     home.setVisible(true);
                     home.setLocationRelativeTo(null);
-                    //home.setExtendedState(home.MAXIMIZED_BOTH);
-                    
                     login.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.");
                 }
             }
         });
-        
+
         login.getLabel_Salir().addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {

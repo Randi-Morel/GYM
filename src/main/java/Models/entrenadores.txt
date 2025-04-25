@@ -1,0 +1,12 @@
+1;nombre;apellido;telefono;correo@gmail.com
+2;nombre2;apellido2;
+3;Carlos;Ramírez;8095551234;carlos.ramirez@gmail.com
+4;María;Gómez;;
+5;Luis;Fernández;8093334455;lfernandez@correo.com
+6;Ana;Torres;;
+7;José;Martínez;8099990000;
+8;Patricia;Santos;;patri.santos@hotmail.com
+9;Miguel;Almonte;8091112233;m.almonte@gmail.com
+10;Laura;Vargas;;
+11;Javier;Castillo;8097778899;jcastillo@fitnessrd.com
+12;Daniela;Reyes;;
